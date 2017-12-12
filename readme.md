@@ -18,9 +18,8 @@ If you run it on the Google App Engine, the image converts in an instant. The us
 * [Copyright](#copyright)
 
 ### <a id="usage"></a>Usage
+'Copy the URL from here and fill the required information accordingly-
 
-*URL* - 
-Copy the URL from here and fill the required information accordingly-
 ```http://compressor-head.appspot.com/image/?image_url=[IMAGE_URL]&width=[WIDTH]&height=[HEIGHT]&format=[FORMAT]```
 
 Where
