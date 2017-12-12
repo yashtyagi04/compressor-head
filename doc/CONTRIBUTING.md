@@ -9,9 +9,9 @@
 * [Cleaning up](#clean_up)
 
 ## Introduction
-The first thing to do is create an account on GitHub (if you do not have one yet). Then you should read the rules of participation in the development for the project you selected. These rules are usually found in a file CONTRIBUTING.md in the root of the repository. This repository doesn't have it.
+The first thing to do is to create an account on GitHub (if you do not have one yet). Then you should read the rules of participation in the development for the project you has selected. These rules are usually in a file CONTRIBUTING.md which is in the root of the repository (This repository doesn't have it).
 
-Usually, there are several ways to participate in the development of a project, the main ones are sending a message about some error or desired improvement (Submitting Issue) or directly creating a Pull Request with your correction or improvement (Code Contributing). You can also participate in the improvement of documentation, answers to questions that have arisen from other developers, and much more.
+Usually, there are several ways to participate in the development of a project, the common ways are to sending a message about some error or desired improvement (Submitting Issue) or directly creating a Pull Request with your correction or improvement (Code Contributing). You can also participate in the improvement of documentation by answering to questions that have arisen from other developers, and much more.
 
 
 ## <a id="fork"></a>Forking the project
@@ -46,12 +46,12 @@ git checkout -b <your-name-branch> upstream/master #exemple
 ```
 
 Now you can easily start working on the code.
-While working, remember the following rules:
+While working on the code, remember the following rules:
 * Follow the coding standards (usually PSR standards);
 * Write unit tests to prove that the bug is fixed, or that the new function actually works;
 * Try not to violate backward compatibility without extreme necessity;
 * Use simple and logical whole commits;
-* Write clear, clear, complete messages when you commit changes.
+* Write clear, complete messages when you commit changes.
 
 ## <a id="pull"></a>Sending a pull request
 
@@ -67,7 +67,7 @@ git rebase upstream/master
 
 If everything is good with your pull request, then soon it will be merged by a project collaborator.
 However, it is more likely that a reviewer asks for some changes to be made to your pull request.
-To do so, simply return to step 6 and after making the changes and commit we perform the following commands:
+To do so, simply make changes according to the reviewer and after making the changes and commit we perform the following commands:
 ```bash
 git checkout <your-name-branch>
 git fetch upstream
@@ -84,7 +84,7 @@ git checkout master
 git branch -D <your-name-branch>
 git push origin --delete <your-name-branch>
 ```
-Instead of the last command, you can also run
+Instead of using the last command, you can also run
 ```bash
 git push origin :<your-name-branch>
 ```
