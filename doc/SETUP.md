@@ -6,8 +6,7 @@
 * [Running the app](#run_app)
 
 ## <a id="ins_gae"></a>Installing Google App Engine
-The most important thing is to install Google App Engine. Without this, this program will not work! To install, you need to download Google App Engine and then install it.
-
+Download Google App Engine and then install it (necessary).
 ### Windows, Linux:
 ```bash
 cd ~
@@ -29,7 +28,7 @@ export PATH=$PATH:/root/comp_head_local/google_appengine/
 ```
 
 ## <a id="ins_py"></a>Installing Python
-After installing the GAE, install [Python](https://www.python.org) (if not installed).
+After installing the Google App Engine, install [Python](https://www.python.org) (if not installed).
 
 ### Windows, Linux:
 ```
@@ -41,19 +40,19 @@ sudo apt-get -y install python2.7
 sudo installer -pkg python2.7
 ```
 
-Install [Git](https://git-scm.com) (if not installed)
+Install [Git](https://git-scm.com) (if not installed).
 ```bash
 cd ~
 sudo apt install git
 ```
 
-Lastly, head back to the comp_head_local folder
+Lastly, head back to the comp_head_local folder.
 ```bash
 cd comp_head_local
 ```
 
 ## <a id="run_app"></a>Running the app
-Then, you can bend the repository to your computer and run a program from there
+After following the above instructions, you can bend the repository to your computer and run the program from there.
 
 ```
 git clone https://github.com/jboss-outreach/compressor-head
