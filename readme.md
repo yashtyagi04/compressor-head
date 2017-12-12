@@ -1,13 +1,13 @@
 # Compressor Head
 
-Compressor Head is a web application for compressing/scaling an image before downloading it.
+Compressor Head is a web application for compressing/scaling and changing format (Supported formats - JPEG, PNG and WEBP) of an image to the desired form. After getting your desired form, you can download it.
 It is built on [Python](https://www.python.org) and hosted on the [Google App Engine](https://cloud.google.com/appengine).
 
 ## Why Compressor Head?
 
-Compressor Head compresses images to the desired resolution before passing these images back to the user to download. This saves data and storage resources.
+Compressor Head compresses image to the desired resolution and also changes it to the desired format before passing the image back to the user to download. It is fast and also saves data and storage resources.
 
-Running on the Google App Engine, the image conversion is nearly instantaneous. The usage of the memcache library also speeds up the conversion process if the same image has been retrieved previously.
+If you run it on the Google App Engine, the image converts in an instant. The usage of the memcache library also speeds up the conversion process (if the same image has been retrieved previously).
 
 ## Contents
 * [Usage](#usage)
@@ -19,26 +19,27 @@ Running on the Google App Engine, the image conversion is nearly instantaneous. 
 
 ### <a id="usage"></a>Usage
 
-*URL* - ```
-http://compressor-head.appspot.com/image/?image_url=[IMAGE_URL]&width=[WIDTH]&height=[HEIGHT]&format=[FORMAT]```
+*URL* - 
+Copy the URL from here and fill the required information accordingly-
+```http://compressor-head.appspot.com/image/?image_url=[IMAGE_URL]&width=[WIDTH]&height=[HEIGHT]&format=[FORMAT]```
 
 Where
 ```
-*IMAGE_URL* is the URL of the image which is to be compressed.
-*WIDTH* is the desired width.
-*HEIGHT* is the desired height.
-*FORMAT* is the desired image format (Supported formats - JPEG, PNG and WEBP).
+[IMAGE_URL] is the URL of the image which is to be compressed.
+[WIDTH] is the desired width of the image.
+[HEIGHT] is the desired height of the image.
+[FORMAT] is the desired image format (Supported formats - JPEG, PNG and WEBP).
 ```
 
-Both WIDTH and HEIGHT should be integers greater than or equal to zero:
- * If *both are zero*, the image will not be scaled.
- * If *one of the two is zero*, it will scale that non-zero dimension and the other dimention will be scaled such that the aspect ratio remains the same.
- * If *both are not zero*, both dimentions will scale accordingly which might change the aspect ratio of the image.
+Both WIDTH and HEIGHT should be zero or positive integers 
+ * If *both are zero*, the image will not be compressed/scaled.
+ * If *one of the two is zero*, it will scale in such a way that non-zero dimension and the other dimention will be scaled such that the aspect ratio remains the same.
+ * If *both are not zero*, both dimentions will scale accordingly.
 
 ### <a id="usage_exm"></a>Usage example
 
 Sample Image URL - http://compressor-head.appspot.com/image
-This is a `5.8 MB JPEG` image. Dimention `5649×3684`
+This is a `5.8 MB JPEG` image with dimentions `5649×3684`.
 ![](http://compressor-head.appspot.com/image)
 
 To resize the image -
@@ -46,25 +47,25 @@ To resize the image -
 
 ![](http://compressor-head.appspot.com/image/?image_url=http://compressor-head.appspot.com/image&width=500&height=0&format=jpeg)
 
-This returns an image `37 KB JPEG` image with dimentions `500x326`
+This returns an image `37 KB JPEG` image with dimentions `500x326`.
 
 - Resize (Height) : `http://compressor-head.appspot.com/image/?image_url=http://compressor-head.appspot.com/image&width=0&height=250&format=png`
 
 ![](http://compressor-head.appspot.com/image/?image_url=http://compressor-head.appspot.com/image&width=0&height=250&format=png)
 
-This returns an image `164 KB PNG` image with dimentions `383x250`
+This returns an image `164 KB PNG` image with dimentions `383x250`.
 
 - Resize (Width & Height) : `http://compressor-head.appspot.com/image/?image_url=http://compressor-head.appspot.com/image&width=500&height=350&format=jpeg`
 
 ![](http://compressor-head.appspot.com/image/?image_url=http://compressor-head.appspot.com/image&width=500&height=350&format=jpeg)
 
-This returns an image `41 KB JPEG` image with dimentions `500x350`
+This returns an image `41 KB JPEG` image with dimentions `500x350`.
 
-**Note:** You can also use the `WEBP` format, but it's not shown as an example as GitHub does not render WEBPs. A sample WEBP conversion of this conversion can be found [here](http://compressor-head.appspot.com/image/?image_url=http://compressor-head.appspot.com/image&width=500&height=350&format=webp).
+**Note:** You can also use the `WEBP` format (it's not shown here as an example because GitHub does not render WEBPs). A sample WEBP conversion of this conversion can be found [here](http://compressor-head.appspot.com/image/?image_url=http://compressor-head.appspot.com/image&width=500&height=350&format=webp).
 
 ### <a id="work"></a> Working with the project
 
-If you'd like to get more hands-on with the project, check out the following documentation:
+If you'd like to get more hands on the project, check out the following documentation:
  * [Setting up the project](doc/SETUP.md)
  * [Contributing to the project](doc/CONTRIBUTING.md)
 
