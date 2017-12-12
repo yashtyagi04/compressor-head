@@ -84,7 +84,7 @@ git checkout master
 git branch -D <your-name-branch>
 git push origin --delete <your-name-branch>
 ```
-Instead of using the last command, you can also run
+Instead of using the last command, you can also run:
 ```bash
 git push origin :<your-name-branch>
 ```
